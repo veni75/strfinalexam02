@@ -32,7 +32,8 @@ export class AppComponent {
   }
 
   onActive(todo: Todo): void {
-    this.todoService.update(todo);
+    todo.active = !todo.active;
+    this.todoService.update(todo).subscribe();
   }
 
   sorter(): void {
